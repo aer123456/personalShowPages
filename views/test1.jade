@@ -1,0 +1,98 @@
+extends layout
+
+block content
+
+    //  这里写样式  //
+    style.
+        .page {
+            height: 100%;
+            width: 100%;
+            background: url('/images/design-cover.jpg');
+            background-size: cover;
+            padding-top: 10%;
+            min-height: 900px;
+        }
+
+        .page img.head {
+            display: block;
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+            border: 5px solid #fff;
+            border-radius: 999px;
+        }
+
+        .page .intro p {
+            display: block;
+            line-height: 100px;
+            color: #fff;
+            background: #000;
+            opacity: 0.4;
+            text-align: center;
+            font-size: 40px;
+            font-weight: bolder;
+            margin-top: 100px;
+            margin-bottom: 200px;
+        }
+        .linksBar a {
+            display: inline-block;
+            width: 33%;
+            line-height: 50px;
+            color: #fff;
+            background: #000;
+            border: 1px solid #fff;
+            text-align: center;
+            text-decoration: none;
+            float: left;
+        }
+        .linksBar a:hover {
+            background: #444;
+        }
+        form {
+            display: inline-block;
+            line-height: 100px;
+            width: 50%; 
+            float: left;
+        }
+        form input {
+            display: inline-block;
+            width: 40%;
+            height: 40px;
+            background: #CF616F;
+            color: #fff;
+            font-size: 20px;
+            margin-top: 200px;
+            margin-left: 50px;
+            padding-top: 20px;
+            border-radius: 5px;
+            float: left;
+        }
+        a.down {
+            display: inline-block;
+            width: 100px;
+            line-height: 60px;
+            background: #CF616F;
+            color: #fff;
+            margin: 200px 100px 0 0;
+            border-radius: 5px;
+            font-size: 20px;
+            text-align: center;
+            text-decoration: none;
+            float: right;
+        }
+    //样式完毕
+
+    // 这里写标签内容 //
+    div.page
+        img.head(src="/images/Zombatar_1.jpg", alt="头像")
+        div.intro 
+            p 林建发个人试验展示
+        div.linksBar
+            a(href="/test2") 图片展示
+            a(href="/test3") 音频展示
+            a(href="/test4") 视频展示
+        form(method='post', action='/upload/test2', enctype='multipart/form-data')
+            input(name='inputFile', type='file', multiple='mutiple')
+            input(name='btnUp', type='submit',value='上传' style='height: 60px; padding-top: 0px;')
+        a.down(href='/download/Zombatar_1.jpg') 下载
+    
