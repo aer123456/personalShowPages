@@ -2,7 +2,7 @@
 个人实验展示网页
 操作步骤：
 	1: 在电脑上安装node.js 以及express-generator和cnpm(百度搜索淘宝npm镜像) 不懂得自行百度
-	2: cmd窗口中进入本工程所在的文件夹linjiafa
+	2: cmd窗口中进入本工程所在的文件夹
 	3: 执行命令cnpm install 没问题之后，执行命令npm start
 	4: 浏览器中输入 localhost:3000/test1  即可访问首页
 
