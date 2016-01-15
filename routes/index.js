@@ -26,14 +26,13 @@ router.get('/:route', function (req, res, next){
 });
 
 /* upload files. */
-router.post('/upload/:path', function (req, res, next) {
+router.post('/upload', function (req, res, next) {
   	var form = new multiparty.Form({uploadDir: './public/upload/'});
   	form.parse(req, function(err, fields, files) {
      	var filesTmp = JSON.stringify(files,null,2);
      	if(err){
        		console.log('parse error: ' + err);
      	} else {
-	    	// console.log('parse files: ' + filesTmp);
 	       	var inputFile = files.inputFile[0];
 	       	var uploadedPath = inputFile.path;
 	       	var dstPath = './public/upload/' + inputFile.originalFilename;
@@ -52,24 +51,7 @@ router.post('/upload/:path', function (req, res, next) {
 	    // res.end(util.inspect({fields: fields, files: filesTmp}));
   	});
 
-  	var path = req.params.path;
-  	switch(path) {
-        case 'test1' :
-            res.render('test1', { });
-            break;
-        case 'test2' :
-            res.render('test2', { });
-            break;
-        case 'test3' :
-            res.render('test3', { });
-            break;
-        case 'test4' :
-            res.render('test4', { });
-            break;
-        default :
-            res.render('error', { message: '上传路径不正确！' });
-            break;   
-  	}
+    res.render('test1', { });
 });
 
 /* download files. */
